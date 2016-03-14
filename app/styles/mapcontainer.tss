@@ -19,6 +19,12 @@
     opacity: 0.7
 }
 
+'#lzAttribs' : {
+   left : 0,
+   width : "85%",
+   height: "100%"
+}
+
 '#labelCode' : {
     color: "#000000",
     left: "2%",

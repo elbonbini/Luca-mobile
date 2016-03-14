@@ -10,10 +10,12 @@
     <Picker id="pickerLzs" onChange="doPickerChange"> <!-- onClick="doPickerClick"-->
       <PickerColumn id="lzDetails">
         <PickerRow>
-          <Label class="gid"> </Label>
-          <Label class="code"> </Label>
-          <Label class="abbrev"> </Label>
-          <Label class="chooseLz">No livelihood zone</Label>
+          <View id="lzAttribs">
+            <Label class="gid"> </Label>
+            <Label class="code"> </Label>
+            <Label class="abbrev"> </Label>
+            <Label class="chooseLz">No livelihood zone</Label>
+          </View>
         </PickerRow>
       </PickerColumn>
     </Picker>

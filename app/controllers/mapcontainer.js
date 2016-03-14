@@ -420,14 +420,14 @@ mapView.addEventListener('longclick', function(evt) {
 function doLabelClick(e) {
   // shows the picker wheel or hides it i
   if (picker.visible) {
-    console.log(picker.width);
+//    console.log(picker.width);
     picker.visible = false;
   } else {
 //    console.log("picker width: " , picker.width);
 //    console.log("parent:\n",e.source.parent.width);
-    picker.width = e.source.parent.width;
-    picker.columns[0].width = picker.width;
-    console.log("picker width: " , picker.width, " column width: ", picker.columns[0].width);
+//    picker.width = e.source.parent.width;
+//    picker.columns[0].width = picker.width;
+//    console.log("picker width: " , picker.width, " column width: ", picker.columns[0].width);
     picker.visible = true;
   }
 }

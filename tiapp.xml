@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>za.wahenga.myliving</id>
     <name>myLIVING</name>
-    <version>1.0.10.527</version>
+    <version>1.0.10.528</version>
     <publisher>Charles Rethman</publisher>
     <url>http://www.wahenga.co.za</url>
     <description>myLIVING is an app to enable the efficient collection of Household Economy Aprroach data into an online database. It replaces a system of paper forms, spreadsheets and cumbersone data entry. myLIVING is designed to work with individual single-sample data entry as well focus group representative data.</description>
@@ -12,7 +12,7 @@
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
     <guid>70ed0996-4526-4c96-9111-f7d937b1af5e</guid>
-    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.ui.defaultunit" type="string">system</property>
     <ios>
         <plist>
             <dict>

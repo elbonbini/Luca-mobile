@@ -56,8 +56,8 @@ function drillDown (array, field) {
     var init = objStr.indexOf(field);
     var beginObj = objStr.lastIndexOf("{", init);
     function test (string, open, close) {
-      console.log("open " + string.indexOf("{", open));
-      console.log("close " + string.indexOf("}", close));
+//      console.log("open " + string.indexOf("{", open));
+//      console.log("close " + string.indexOf("}", close));
       if (string.indexOf("{", open) < 0 || string.indexOf("{", open) > string.indexOf("}", close)) {
         return string.indexOf("}", close);
       } else {
@@ -65,9 +65,10 @@ function drillDown (array, field) {
       }
     }
     endObj = test(objStr, init, init);
-    console.log(objStr.slice(beginObj, endObj));
+    console.log(objStr.slice(beginObj, endObj + 1));
     result.push(JSON.parse(objStr.slice(beginObj, endObj + 1)));
   }
+//  console.log(result);
   return result;
 }
 
@@ -147,6 +148,7 @@ function loadPicker(dataFile, pruneString) {
 //  var mapAttrib = function (fetchGeomFile(dataFile, pruneString) ) {
     
 //  })
+  console.log("Array length: " + mapAttrib.length + "\nArray:\n" + mapAttrib);
   mapAttrib = mapAttrib.sort(sortBy('lz_code'), false, parseInt);
   // set font details, family
   if(Ti.Platform.osname === "ipad" || Ti.Platform.osname === "iphone") {
@@ -421,10 +423,11 @@ function doLabelClick(e) {
     console.log(picker.width);
     picker.visible = false;
   } else {
-    console.log("picker width: " , picker.width);
-    console.log("parent:\n",e.source.parent.width);
+//    console.log("picker width: " , picker.width);
+//    console.log("parent:\n",e.source.parent.width);
     picker.width = e.source.parent.width;
-    console.log("picker width: " , picker.width);
+    picker.columns[0].width = picker.width;
+    console.log("picker width: " , picker.width, " column width: ", picker.columns[0].width);
     picker.visible = true;
   }
 }

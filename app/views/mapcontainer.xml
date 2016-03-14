@@ -7,7 +7,7 @@
       <Label id="labelChooseZone" class="labelMedium" onClick="doLabelClick">Click here to select a livelihood zone ...</Label>
       <Button id="buttonPolyExtent" onClick="doPolyExtentClick"/>
     </View>
-    <Picker id="pickerLzs" onChange="doPickerChange"> <!-- onClick="doPickerClick"-->
+    <Picker id="pickerLzs" onChange="doPickerChange">
       <PickerColumn id="lzDetails">
         <PickerRow>
           <View id="lzAttribs">

@@ -1,0 +1,2 @@
+# myLIVING
+myLiving mobile is package for collecting and viewing household economy livelihoods interview data. The repository contains mostly JavaScript code for the Appcelerator (Titanium-Alloy) IDE. The Household Economy Approach is an analysis framework for understanding how people make a living and for analysing the impact of shocks or hazards on that. HEA has been used successfully to prevent famine and to determine policy options for reducing poverty and deprivation. HEA is a key tool for "Ending World Hunger"!

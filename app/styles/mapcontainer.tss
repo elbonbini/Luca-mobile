@@ -74,8 +74,8 @@
 
 '#labelPolyExtent' : {
 	left : 0,
-	right : 0,
-	bottom : 0,
+	right : "2dp",
+	bottom : "1dp",
 	textAlign: "center"
 }
 

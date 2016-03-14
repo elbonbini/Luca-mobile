@@ -184,8 +184,10 @@ function loadPicker(dataFile, pruneString) {
     fontFamily: family,
     fontSize: sizeCodeAbbrev
   };
-  var widthPicker = mapView.parent;
-  console.log("Desired width of picker: " , widthPicker);
+  
+  var widthPicker = picker.parent.width;
+  console.log("Picker's parent: " , widthPicker);
+  picker.width = 500;
   
   // load up the control
   for (var i = 0; i < mapAttrib.length; i++) {

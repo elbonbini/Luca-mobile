@@ -8,12 +8,12 @@
       <Button id="buttonPolyExtent" onClick="doPolyExtentClick"/>
     </View>
     <Picker id="pickerLzs" onChange="doPickerChange"> <!-- onClick="doPickerClick"-->
-      <PickerColumn id="lzdetails">
+      <PickerColumn id="lzDetails">
         <PickerRow>
           <Label class="gid"> </Label>
           <Label class="code"> </Label>
           <Label class="abbrev"> </Label>
-          <Label class="chooseLZ">No livelihood zone</Label>
+          <Label class="chooseLz">No livelihood zone</Label>
         </PickerRow>
       </PickerColumn>
     </Picker>

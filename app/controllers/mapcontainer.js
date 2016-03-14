@@ -13,6 +13,7 @@ var args = arguments[0] || {};
 var map = Alloy.Globals.Map;
 var mapView = $.mapView;
 var picker = $.pickerLzs;
+//picker.width = "94 %";
 var count = 0;
 // empty object variable to hold the location view
 var locationView = {};
@@ -26,6 +27,16 @@ var rightButton = Titanium.UI.createButton({
   width: 30,
   height: 30
 });
+
+// Useful function (method) get the minimum value in an Array of values
+Array.prototype.max = function () {
+  return Math.max.apply(Math, this);
+};
+
+// Useful function (method) get the maximum value in an Array of values 
+Array.prototype.min = function () {
+  return Math.min.apply(Math, this);
+};
 
 // variable and function to sort out an array of objects.
 var sortBy = function(field, reverse, primer) {
@@ -45,6 +56,8 @@ function drillDown (array, field) {
     var init = objStr.indexOf(field);
     var beginObj = objStr.lastIndexOf("{", init);
     function test (string, open, close) {
+      console.log("open " + string.indexOf("{", open));
+      console.log("close " + string.indexOf("}", close));
       if (string.indexOf("{", open) < 0 || string.indexOf("{", open) > string.indexOf("}", close)) {
         return string.indexOf("}", close);
       } else {
@@ -52,20 +65,11 @@ function drillDown (array, field) {
       }
     }
     endObj = test(objStr, init, init);
+    console.log(objStr.slice(beginObj, endObj));
     result.push(JSON.parse(objStr.slice(beginObj, endObj + 1)));
   }
   return result;
 }
-
-// Useful function (method) get the minimum value in an Array of values
-Array.prototype.max = function () {
-  return Math.max.apply(Math, this);
-};
-
-// Useful function (method) get the maximum value in an Array of values 
-Array.prototype.min = function () {
-  return Math.min.apply(Math, this);
-};
 
 // Function to fetch polygon geoJSON file from the *?* directory and prune it down to its core data array,
 // parse it and return it as an object.
@@ -140,6 +144,9 @@ function polygonExtent(points) {
 function loadPicker(dataFile, pruneString) {
   // get the data as a JSON object
   var mapAttrib = drillDown(fetchGeomFile(dataFile, pruneString), 'lz_code');
+//  var mapAttrib = function (fetchGeomFile(dataFile, pruneString) ) {
+    
+//  })
   mapAttrib = mapAttrib.sort(sortBy('lz_code'), false, parseInt);
   // set font details, family
   if(Ti.Platform.osname === "ipad" || Ti.Platform.osname === "iphone") {
@@ -180,7 +187,7 @@ function loadPicker(dataFile, pruneString) {
     var row = Ti.UI.createPickerRow();
     var labelGid = Ti.UI.createLabel({
       textAlign: "right",
-      width: 20,
+      width: picker.width,
       visible: false,
       text: shape.gid,
       font: fontName
@@ -205,11 +212,14 @@ function loadPicker(dataFile, pruneString) {
     });
     var labelName = Ti.UI.createLabel({
       left: "15%",
-      right: 0,
+      width: "85%",
       textAlign: "left",
       text: shape.lz_name,
       font: fontName
     });
+//    console.log("labelCode: ", labelCode.text, ", left: ", labelCode.left, " width: ", labelCode.width);
+//    console.log("labelAbbrev: ", labelAbbrev.text, ", left: ", labelAbbrev.left, " width: ", labelAbbrev.width);
+//    console.log("labelName: ", labelName.text, ", left: ", labelName.left, " width: ", labelName.width, " alignment: ", labelName.textAlign);
     row.add(labelGid);
     row.add(labelCode);
     row.add(labelAbbrev);
@@ -408,8 +418,13 @@ mapView.addEventListener('longclick', function(evt) {
 function doLabelClick(e) {
   // shows the picker wheel or hides it i
   if (picker.visible) {
+    console.log(picker.width);
     picker.visible = false;
   } else {
+    console.log("picker width: " , picker.width);
+    console.log("parent:\n",e.source.parent.width);
+    picker.width = e.source.parent.width;
+    console.log("picker width: " , picker.width);
     picker.visible = true;
   }
 }

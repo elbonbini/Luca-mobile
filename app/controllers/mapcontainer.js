@@ -150,6 +150,7 @@ function loadPicker(dataFile, pruneString) {
 //  })
 //  console.log("Array length: " + mapAttrib.length + "\nArray:\n" + mapAttrib);
   mapAttrib = mapAttrib.sort(sortBy('lz_code'), false, parseInt);
+  
   // set font details, family
   if(Ti.Platform.osname === "ipad" || Ti.Platform.osname === "iphone") {
     var family = "GillSans";
@@ -183,13 +184,21 @@ function loadPicker(dataFile, pruneString) {
     fontFamily: family,
     fontSize: sizeCodeAbbrev
   };
+  var widthPicker = mapView.parent;
+  console.log("Desired width of picker: " , widthPicker);
+  
   // load up the control
   for (var i = 0; i < mapAttrib.length; i++) {
     var shape = mapAttrib[i];
-    var row = Ti.UI.createPickerRow();
+    var row = Ti.UI.createPickerRow({
+      width : "100%"
+    });
+/*    var ViewLzAttribs = Ti.UI.createView({
+      width : widthPicker
+  }); */
     var labelGid = Ti.UI.createLabel({
       textAlign: "right",
-      width: picker.width,
+      width: "100%",
       visible: false,
       text: shape.gid,
       font: fontName
@@ -226,6 +235,7 @@ function loadPicker(dataFile, pruneString) {
     row.add(labelCode);
     row.add(labelAbbrev);
     row.add(labelName);
+//    row.add(viewLzAttribs);
     picker.columns[0].addRow(row);
   }
 }

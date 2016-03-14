@@ -5,13 +5,17 @@
       <Label id="labelCode" class="code" onClick="doLabelClick"> </Label>
       <Label id="labelAbbrev" class="abbrev" onClick="doLabelClick"> </Label>
       <Label id="labelChooseZone" class="labelMedium" onClick="doLabelClick">Click here to select a livelihood zone ...</Label>
-      <Button id="buttonPolyExtent" onClick="doPolyExtentClick"/>
-    </View>
+      <View id="viewPolyExtent" onClick="doPolyExtentClick">
+         <Button id="buttonPolyExtent"/>
+         <Label id="labelPolyExtent">Extent</Label>
+      </View>
+      </View>
+<!-->    <View id="viewPicker"> -->
     <Picker id="pickerLzs" onChange="doPickerChange">
       <PickerColumn id="lzDetails">
         <PickerRow>
 <!--          <View id="lzAttribs"> -->
-            <Label class="gid"> </Label>
+            <Label class="gid">x</Label>
             <Label class="code"> </Label>
             <Label class="abbrev"> </Label>
             <Label class="chooseLz">No livelihood zone</Label>
@@ -19,5 +23,6 @@
         </PickerRow>
       </PickerColumn>
     </Picker>
+<!-->    </View> -->
   </View>
 </Alloy>

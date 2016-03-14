@@ -8,23 +8,25 @@
     enableZoomControls: true
 }
 
-'#livezones' : {
-	left : 0,
-	width : "100%",
-	top : 0,
-	height : "100%"
-}
-
 '#viewLabels' : {
     center: {x: "50%"},
-    width: "94%",
     top: 0,
-    height: "45dp",
+//    width : "94%",
+    height: "50dp",
     borderColor: "#000000",
     borderWidth: 1,
     backgroundColor: "#ffffff",
     opacity: 0.7
 }
+
+'#viewLabels[platform=ios formFactor=handheld]' : {
+	width : 280
+}
+
+'#viewLabels[platform=ios formFactor=tablet]' : {
+	width : 720
+}
+
 
 '#labelCode' : {
     color: "#000000",
@@ -47,32 +49,66 @@
 '#labelChooseZone' : {
     color: "#000000",
     left: "15%",
-    right: "42dp",
+    right: "40dp",
     top: 0,
-    height: "45dp",
+    height: "50dp",
     textAlign: "left"
+}
+
+'#viewPolyExtent' : {
+	right : "2dp",
+	width : "38dp",
+	top	: 0,
+	bottom : 0
 }
 
 '#buttonPolyExtent' : {
 //    borderColor: "#000000",
 //    borderWidth: 1,
-    image: "images/android_locate.png",
-    right: "6dp",
-    width: "30dp",
-    top: "3dp",
-    bottom: "12dp"
+   image: "images/android_locate.png",
+   left: "3dp",
+   right: "3dp",
+   top: "2dp",
+   bottom: "16dp"
+}
+
+'#labelPolyExtent' : {
+	left : 0,
+	right : 0,
+	bottom : 0,
+	textAlign: "center"
+}
+
+'#labelPolyExtent[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 8}
+}
+
+'#labelPolyExtent[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 14}
+}
+
+'#labelPolyExtent[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontWeight: "Bold", fontSize: 8}
 }
 
 '#pickerLzs' : {
-  borderColor : "#000000",
-  borderWidth : 1,
-  center : { x : "50%" },
-  width : "450%",
-  top : "45dp",
-  type : Titanium.UI.PICKER_TYPE_PLAIN,
-  selectionIndicator : true,
-  useSpinner : true,
-  opacity : 0.7
+  	borderColor : "#000000",
+  	borderWidth : 1,
+  	center : { x : "50%" },
+//  	width : "94%",
+  	top : "50dp",
+  	type : Titanium.UI.PICKER_TYPE_PLAIN,
+  	selectionIndicator : true,
+  	useSpinner : true,
+  	opacity : 0.7
+}
+
+'#pickerLzs[platform=ios formFactor=handheld]' : {
+	width : 280
+}
+
+'#pickerLzs[platform=ios formFactor=tablet]' : {
+	width : 720
 }
 
 '.gid': {

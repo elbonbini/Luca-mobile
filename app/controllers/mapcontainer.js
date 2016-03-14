@@ -185,9 +185,9 @@ function loadPicker(dataFile, pruneString) {
     fontSize: sizeCodeAbbrev
   };
   
-  var widthPicker = picker.parent.width;
-  console.log("Picker's parent: " , widthPicker);
-  picker.width = 500;
+//  var widthPicker = 
+//  console.log("Picker's parent: " , picker.parent.id);
+//  picker.width = Ti.UI.
   
   // load up the control
   for (var i = 0; i < mapAttrib.length; i++) {
@@ -195,9 +195,6 @@ function loadPicker(dataFile, pruneString) {
     var row = Ti.UI.createPickerRow({
       width : "100%"
     });
-/*    var ViewLzAttribs = Ti.UI.createView({
-      width : widthPicker
-  }); */
     var labelGid = Ti.UI.createLabel({
       textAlign: "right",
       width: "100%",
@@ -223,23 +220,24 @@ function loadPicker(dataFile, pruneString) {
       text: shape.lz_abbrev,
       font: fontCodeAbbrev
     });
-    var labelName = Ti.UI.createLabel({
-      left: "15%",
-      width: "85%",
-      textAlign: "left",
-      text: shape.lz_name,
-      font: fontName
-    });
+      var labelName = Ti.UI.createLabel({
+         left: "15%",
+         width: "85%",
+         textAlign: "left",
+         text: shape.lz_name,
+         font: fontName
+      });
 //    console.log("labelCode: ", labelCode.text, ", left: ", labelCode.left, " width: ", labelCode.width);
 //    console.log("labelAbbrev: ", labelAbbrev.text, ", left: ", labelAbbrev.left, " width: ", labelAbbrev.width);
 //    console.log("labelName: ", labelName.text, ", left: ", labelName.left, " width: ", labelName.width, " alignment: ", labelName.textAlign);
-    row.add(labelGid);
-    row.add(labelCode);
-    row.add(labelAbbrev);
-    row.add(labelName);
+      row.add(labelGid);
+      row.add(labelCode);
+      row.add(labelAbbrev);
+      row.add(labelName);
 //    row.add(viewLzAttribs);
-    picker.columns[0].addRow(row);
-  }
+      picker.columns[0].addRow(row);
+   }
+
 }
 
 // Function to set the region for the visible extent of the map. Used in finding the user location and in zooming
@@ -430,18 +428,18 @@ mapView.addEventListener('longclick', function(evt) {
 });
 
 function doLabelClick(e) {
-  // shows the picker wheel or hides it i
-  if (picker.visible) {
+   // shows the picker wheel or hides it i
+   if (picker.visible) {
 //    console.log(picker.width);
-    picker.visible = false;
-  } else {
-    console.log("picker width: " , picker.width);
+      picker.visible = false;
+   } else {
+//    console.log("picker width: " , picker.width);
 //    console.log("parent:\n",e.source.parent.width);
 //    picker.width = e.source.parent.width;
 //    picker.columns[0].width = picker.width;
 //    console.log("picker width: " , picker.width, " column width: ", picker.columns[0].width);
-    picker.visible = true;
-  }
+      picker.visible = true;
+   }
 }
 
 function doPolyExtentClick(e) {

@@ -1,0 +1,237 @@
+'#centreBoard': {
+    backgroundColor: "#e3e4e6",
+    viewShadowColor: "#020202",
+    viewShadowRadius: "20%",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 5
+}
+
+'#centreHeader': {
+    backgroundColor: "#2f5c70",
+    borderColor: "#646567",
+    borderWidth: 0.25,
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: 76
+}
+
+'.buttonDrawer': {
+    top: 28,
+    width: "36dip",
+    height: "36dip",
+    selectedColor: "#646567",
+    tintColor: "#cccccc"
+}
+
+'#buttonLeftDrawerOpen': {
+    left: 10,
+    image: "images/layer-7.png"
+}
+
+'#centreHeaderArea': {
+    top: 20,
+    left: 60,
+    right: 60,
+    height: 56
+}
+
+'#labelCentreTitle': {
+    top: 4,
+    color: "#dfb770",
+}
+
+'#labelCentreTitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 28}    
+}
+
+'#labelCentreTitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 18}    
+}
+
+'#labelCentreSubtitle': {
+    top: 34,
+    color: "#dfb770",
+//    font: {fontFamily: "GillSans-Light", fontSize: 18}
+} 
+
+'#labelCentreSubtitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 18}    
+}
+
+'#labelCentreSubtitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 10}    
+}
+
+'#buttonRightDrawerOpen': {
+    right: 10,
+    image: "images/list-fat-7.png"
+}
+
+'#centreBody': {
+    top: 76,
+    left: 0,
+    width: "100%",
+    bottom: 0
+}
+
+'#listLivelihood': {
+    top: "1%",
+    left: "1%",
+    height: "60%",
+    width: "98%",
+    backgroundColor: "#ffffff",
+    bubbleParent: true
+}
+
+'#imageGraph': {
+    top: "62%",
+    height: "36%",
+    center: {x: "50%"},
+    width: "75%",
+    image: "images/zalof_sf.png"
+}
+
+// Top, left position of BOTH drawer list views, BOTH drawer list views laid out vertically
+'.navList': {
+    top: 20,
+    left: 0,
+    layout: "vertical",
+    visible: true
+}
+
+'.listHeader[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '24dp'},
+}
+
+'.listHeader[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: '12dp'},
+}
+
+'.title[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '20dp'},
+}
+
+'.title[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: '10dp'},
+}
+
+'.subtitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '14dp'},
+}
+
+'.subtitle[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: '8dp'},
+}
+
+'#leftDrawer': {
+    left: 0,
+    top: 20,
+    height: Titanium.UI.FILL,
+    backgroundColor: "#0f3c50",
+    layout: "vertical"
+}
+
+'#leftDrawer[formFactor=handheld]': {
+    width: "70%"
+}
+
+'#leftDrawer[formFactor=tablet]': {
+    width: "40%"
+}
+
+'#listLeft': {
+    lifecycleContainer: "livelihood",
+    backgroundColor: "#0f3c50",
+    left: 0,
+    width: "100%",
+    top: 0,
+    height: "100%"
+}
+
+'.listSectionL': {
+    backgroundColor: "#053240",
+    color: "#dfb770",
+    left: '20dp',
+    height: '30dp'
+}
+
+'.listSectionL[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '24dp'},
+}
+
+'.listSectionL[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: '12dp'},
+}
+
+'#listTitleL': {
+    backgroundColor: "#0f3c50",
+    color: "#dfb770",
+    left: '10dp',
+    top: 20
+}
+
+'.listItemsL': {
+    backgroundColor: "#0f3c50"
+}
+
+'#titleL': {
+    color: "#dfb770",
+    left: '30dp',
+    top: 0
+}
+
+'#subtitleL': {
+    color: "#ffffff",
+    left: '30dp',
+    top: '25dp'
+}
+
+'#rightDrawer': {
+    right: 0,
+    top: 20,
+    height: Titanium.UI.FILL,
+    backgroundColor: "#adaaab"
+}
+
+'#rightDrawer[formFactor=handheld]': {
+    width: "70%",
+}
+
+'#rightDrawer[formFactor=tablet]': {
+    width: "40%",
+}
+
+'#listRight': {
+    lifecycleContainer: "livelihood",
+    backgroundColor: "#adaaab",
+    right: 0,
+    width: "100%",
+    top: 0,
+    height: "100%"
+}
+
+'#listTitleR': {
+    color: "#0f3c50",
+    left: '10dp',
+    top: 0
+}
+
+'.listItemsR': {
+    backgroundColor: "#adaaab"
+}
+
+'#titleR': {
+    color: "#0f3c50",
+    left: '30dp',
+    top: 0
+}
+
+'#subtitleR': {
+    color: "#ffffff",
+    left: '30dp',
+    top: '25dp'
+}

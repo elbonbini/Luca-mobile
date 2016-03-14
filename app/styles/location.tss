@@ -1,0 +1,42 @@
+'Window': {
+    layout: "vertical",
+}
+/*
+'Toolbar': {
+    top: 20,
+    barColor: "#0f3c50",
+    borderBottom: true,
+    extendBackground: true
+} */
+
+'Window': {
+  navBarHidden: false,
+}
+
+'#dataEntry': {
+  top: 0,
+  bottom: 0
+}
+
+'Label': {
+    left: 5,
+    right: 5,
+    textAlign: "center",
+    color: "#dfb770",
+    height: 100,
+    wordWrap: true
+}
+
+'#close': {
+    height: "45dp",
+    width: "30%",
+    color: "#ffffff",
+    backgroundColor: "#149b8c"
+}
+
+'#removePin': {
+    height: "45dp",
+    width: "30%",
+    color: "#ffffff",
+    backgroundColor: "#dfb770"
+}

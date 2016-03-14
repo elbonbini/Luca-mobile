@@ -1,0 +1,80 @@
+<Alloy>
+    <Window class="container">
+        <View id="centreBoard">
+            <View id="centreHeader">
+                <ImageView class="drawerImage" id="leftDrawerImage" onClick="clickLeft"></ImageView>
+                <View id="centreHeaderArea" onClick="clickCentre">
+                    <Label id="labelCentreTitle">Welcome!</Label>
+                    <Label id="labelCentreSubtitle">Click either side button</Label>
+                </View>
+                <ImageView class="drawerImage" id="rightDrawerImage" onClick="clickRight"></ImageView>
+            </View>
+            <View id="centreBody" onClick="clickCentre">
+                <ListView id="listLivelihood" onItemclick="clickCentre">
+                    <ListSection>
+                        <ListItem title="Data ..."></ListItem>
+                        <ListItem title="Data ..."></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                        <ListItem></ListItem>
+                    </ListSection>
+            </ListView>
+                <ImageView id="imageGraph"></ImageView>
+            </View>
+        </View>
+        <View id="leftDrawer">
+            <ListView class="navList" id="listLeft" defaultItemTemplate="templateL" onItemclick="doItemClickL">
+                <HeaderView>
+                    <View height="70dp">
+                        <Label class="headerTitle" id="headerTitleL">Interview Level</Label>
+                    </View>
+                </HeaderView>
+                <Templates>
+                    <ItemTemplate id="templateLeft" name="templateL">
+                        <Label bindId="infoL" class="title" id="titleL" visible="true"></Label>
+                        <Label bindId="es_infoL" class="subtitle" id="subtitleL" visible="true"></Label>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection>
+                    <ListItem class="listItemsL" infoL:text="Livelihood Zone" es_infoL:text="Geography: environment, markets"></ListItem>
+                    <ListItem class="listItemsL" infoL:text="Community" es_infoL:text="Location: activites, seasonality, wealth"></ListItem>
+                    <ListItem class="listItemsL" infoL:text="Household" es_infoL:text="Livelihood strategies"></ListItem>
+                    <ListItem class="listItemsL" infoL:text="Commodities" es_infoL:text="Measurement units, values, prices"></ListItem>
+                </ListSection>
+            </ListView>
+        </View>
+        <View id="rightDrawer">
+            <ListView  id="listRight" class="navList" defaultItemTemplate="templateR" onItemclick="doItemClickR">
+                <SearchBar id="searchItemR" barColor="#adaaab"></SearchBar>
+                <HeaderView>
+                    <View height="70dp">
+                        <Label id="headerTitleR">Livelihood categories</Label>
+                    </View>
+                </HeaderView>
+                <Templates>
+                    <ItemTemplate name="templateR">
+                        <Label bindId="infoR" class="title" id="titleR"></Label>
+                        <Label bindId="es_infoR" class="subtitle" id="subtitleR"></Label>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection>
+                    <ListItem class="listItemsR" infoR:text="Livestock" es_infoR:text="Dairy, meat, animal sales" searchableText="livestock, cattle, pigs, sheep, goats, chickens, camels, milk, dairy, ghee, meat, animal"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Crops" es_infoR:text="Staple, non-staple, cash crops" searchableText="crops, maize, beans, legumes, pulses, fruit, vegetables, tomatoes, onions, cabbage, yield, tobacco, sorghum, millet, cash"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Staple Food Purchase" es_infoR:text="Grains, cereals, tubers" searchableText="maize, sorghum, millet, cassava, rice, bread, wheat"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Non-Staple Basic Food Purchase" es_infoR:text="Meat, dairy, legumes, fruit, veg" searchableText="meat, pulses, legumes, dairy, fruit, vegetables"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Casual Employment" es_infoR:text="Agricultural, domestic, constuction" searchableText="labour, clearing, land preparation, weeding, harvesting, mudding, thatching"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Formal Employment" es_infoR:text="Job, contract" searchableText="job, contract, civil, service, full time"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Self-Employment" es_infoR:text="Collection, crafts"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Small business" es_infoR:text="Trading, hiring, services"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Formal Support" es_infoR:text="Social development, grants, loans"></ListItem>
+                    <ListItem class="listItemsR" infoR:text="Informal Support" es_infoR:text="Gifts, loans, remittances"></ListItem>
+                </ListSection>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>

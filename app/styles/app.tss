@@ -1,0 +1,113 @@
+/*
+
+This is your global styles file. Selectors and rules you define
+here will be applied throughout your app. However, these rules
+have the lowest priority of any style settings.
+
+For more information, see the "Style Priorities" section of
+http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_Styles_and_Themes
+
+For example, the following would apply to all labels, windows,
+and text fields (depending on platform) in your app unless you
+overrode the settings with other TSS, XML, or JS settings:
+
+'Label[platform=android]': {
+	color: '#000' // all platforms except Android default to black
+}
+
+'Window': {
+	backgroundColor: '#fff' // white background instead of default transparent
+}
+
+'TextField[platform=android]': {
+	height: Ti.UI.SIZE //
+}
+
+*/
+'.container': {
+    backgroundColor: '#0f3c50',
+    top: 0,
+    left: 0,
+    width: Titanium.UI.FILL,
+    fullscreen: false,
+    exitOnClose: false
+}
+
+'.container[platform=ios]': {
+    navBarHidden: true,
+    statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+}
+
+'.labelSmall[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 8}
+}   
+
+'.labelSmall[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 13}
+}
+
+'.labelSmall[platform=android formFactor=handheld]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: 8}
+}
+
+'.labelSmall[platform=android formFactor=tablet]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: 12}
+}
+
+'.labelMedium[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 12}
+}   
+
+'.labelMedium[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 20}
+}
+
+'.labelMedium[platform=android formFactor=handheld]': {
+    font: {fontFamily: "Gill Light SSi", fontSize: 10}
+}
+
+'.labelMedium[platform=android formFactor=tablet]': {
+    font: {fontFamily: "Gill Light SSi", fontSize: 16}
+}
+
+'.labelDesc[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 16}
+}   
+
+'.labelDesc[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 32}
+}
+
+'.labelDesc[platform=android formFactor=handheld]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: 12}
+}
+
+'.labelDesc[platform=android formFactor=tablet]': {
+    font: {fontFamily: "Gill Light SSi Light", fontSize: 18}
+}
+
+'.textFieldLabel': {
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+    color: "#dfb770"
+}
+
+'.textFieldLabel[platform=ios formFactor=handheld]': {
+    height: "30dp",
+    font: {fontFamily: "GillSans-Light", fontSize: 16}
+}
+   
+'.textFieldLabel[platform=ios formFactor=tablet]': {
+    height: "40dp",
+    font: {fontFamily: "GillSans-Light", fontSize: 20},
+}
+
+'Button[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 18}
+}
+
+'Button[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 22}
+}
+'Button[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontWeight: "Bold", fontSize: 14}
+}

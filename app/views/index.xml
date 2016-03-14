@@ -1,0 +1,145 @@
+<Alloy>
+  <TabGroup tintColor="#2f5c70">
+    <Tab id="interviews" title="Interviews" icon="images/note-write-7.png">
+      <Window class="container"> <!-- onPostlayout="layoutDone"-->
+        <View id="leftDrawer" onClick="clickCentre">
+          <ListView class="navList" id="listLeft" defaultItemTemplate="templateLeft" onItemclick="doItemClickL">
+            <Templates>
+              <ItemTemplate name="templateLeft">
+                <Label bindId="infoL" class="title" id="titleL"></Label>
+                <Label bindId="es_infoL" class="subtitle" id="subtitleL"></Label>
+              </ItemTemplate>
+            </Templates>
+            <HeaderView>
+              <View height="70dp">
+                <Label class="listHeader" id="listTitleL">Interview Level</Label>
+              </View>
+            </HeaderView>
+            <ListSection>
+              <HeaderView>
+                <Label class="listSectionL">Livelihood zone</Label>
+              </HeaderView>
+<!--              <ListItem class="listItemsL" infoL:text="Locations" es_infoL:text="Pick and choose"/>-->
+              <ListItem class="listItemsL" infoL:text="Add location..." es_infoL:text="Enter new location by its details"/>
+            </ListSection>
+            <ListSection>
+              <HeaderView>
+                <Label class="listSectionL">Community</Label>
+              </HeaderView>
+              <ListItem class="listItemsL" infoL:text="Better off" es_infoL:text="Assets, proportion"/>
+              <ListItem class="listItemsL" infoL:text="Middle" es_infoL:text="Assets, proportion"/>
+              <ListItem class="listItemsL" infoL:text="Poor" es_infoL:text="Assets, proportion"/>
+              <ListItem class="listItemsL" infoL:text="Very poor" es_infoL:text="Assets, proportion"/>
+              <ListItem class="listItemsL" infoL:text="Add..." es_infoL:text="New wealth Group..."/>
+            </ListSection>
+            <ListSection>
+              <HeaderView>
+                <Label class="listSectionL">Household</Label>
+              </HeaderView>
+              <ListItem class="listItemsL" infoL:text="Household Interview 1" es_infoL:text="Livelihood strategies"/>
+              <ListItem class="listItemsL" infoL:text="Household Interview 2" es_infoL:text="Livelihood strategies"/>
+              <ListItem class="listItemsL" infoL:text="Add..." es_infoL:text="New household interview..."/>
+            </ListSection>
+          </ListView>
+        </View>
+        <View id="rightDrawer" onClick="clickCentre">
+          <ListView  id="listRight" class="navList" defaultItemTemplate="templateRight" onItemclick="doItemClickR">
+            <Templates>
+              <ItemTemplate name="templateRight">
+                <Label bindId="infoR" class="title" id="titleR"></Label>
+                <Label bindId="es_infoR" class="subtitle" id="subtitleR"></Label>
+              </ItemTemplate>
+            </Templates>
+            <SearchBar id="searchItemR" barColor="#adaaab"></SearchBar>
+            <HeaderView>
+              <View height="70dp">
+                <Label class="listHeader" id="listTitleR">Livelihood categories</Label>
+              </View>
+            </HeaderView>
+            <ListSection>
+              <ListItem class="listItemsR" infoR:text="Livestock" es_infoR:text="Dairy, meat, animal sales" searchableText="livestock, cattle, pigs, sheep, goats, chickens, camels, milk, dairy, ghee, meat, animal"/>
+              <ListItem class="listItemsR" infoR:text="Crops" es_infoR:text="Staple, non-staple, cash crops" searchableText="crops, maize, beans, legumes, pulses, fruit, vegetables, tomatoes, onions, cabbage, yield, tobacco, sorghum, millet, cash"/>
+              <ListItem class="listItemsR" infoR:text="Staple Food Purchase" es_infoR:text="Grains, cereals, tubers" searchableText="maize, sorghum, millet, cassava, rice, bread, wheat"/>
+              <ListItem class="listItemsR" infoR:text="Non-Staple Basic Food Purchase" es_infoR:text="Meat, dairy, legumes, fruit, veg" searchableText="meat, pulses, legumes, dairy, fruit, vegetables"/>
+              <ListItem class="listItemsR" infoR:text="Casual Employment" es_infoR:text="Agricultural, domestic, constuction" searchableText="labour, clearing, land preparation, weeding, harvesting, mudding, thatching"/>
+              <ListItem class="listItemsR" infoR:text="Formal Employment" es_infoR:text="Job, contract" searchableText="job, contract, civil, service, full time"/>
+              <ListItem class="listItemsR" infoR:text="Self-Employment" es_infoR:text="Collection, crafts" searchableText="charcoal, firewood, wood, grass, mats, baskets, carving"/>
+              <ListItem class="listItemsR" infoR:text="Small business" es_infoR:text="Trading, hiring, services" searchableText="kiosk, pick-up, truck, bakkie, taxi, minibus, shop"/>
+              <ListItem class="listItemsR" infoR:text="Formal Support" es_infoR:text="Social development, grants, loans" searchableText="loan, grant, social, development, welfare, vulnerable, orphan, ovc, indigent, disability, pension, old age"/>
+                            <ListItem class="listItemsR" infoR:text="Informal Support" es_infoR:text="Gifts, loans, remittances" searchableText="gift, loan, remittance, help, stokvel"/>
+            </ListSection>
+          </ListView>
+        </View>
+        <View id="centreBoard">
+          <View id="centreHeader">
+            <Button class="buttonDrawer" id="buttonLeftDrawerOpen" onClick="clickLeft"/>
+            <View id="centreHeaderArea" onClick="clickCentre">
+              <Label id="labelCentreTitle">Welcome!</Label>
+              <Label id="labelCentreSubtitle">Click either side button</Label>
+            </View>
+            <Button class="buttonDrawer" id="buttonRightDrawerOpen" onClick="clickRight"/>
+          </View>
+          <View id="centreBody" onClick="clickCentre">
+            <Require id="mapElement" src="mapcontainer" type="view" platform="ios"></Require>
+            <View id="dataHolder" backgroundColor="#ffffff">
+              <ListView id="listLivelihood" onItemclick="clickCentre">
+                <ListSection>
+                  <ListItem title="Data set 1 ..."></ListItem>
+                  <ListItem title="Data set 2 ..."></ListItem>
+                  <ListItem title="Data set 3 ..."></ListItem>
+                  <ListItem title="Data set 4 ..."></ListItem>
+                  <ListItem title="Data set 5 ..."></ListItem>
+                  <ListItem title="Data set 6 ..."></ListItem>
+                  <ListItem title="Data set 7 ..."></ListItem>
+                </ListSection>
+              </ListView>
+              <ImageView id="imageGraph"></ImageView>
+            </View>
+          </View>
+        </View>
+      </Window>
+    </Tab>
+    <Tab title="Info" icon="images/spanner-7.png">
+      <Window id="background" class="container">
+        <ListView top="72dp"></ListView>
+      </Window>
+    </Tab>
+    <Tab title="News" icon="images/share-connect-7.png">
+      <Window id="myUpdates" class="container">
+        <Label class="labelDesc" color="#ffffff" left="5%" right="5%" wordWrap="true" textAlign="center">Announcements, user status and messages will go here</Label>
+      </Window>
+    </Tab>
+    <Tab title="Profile" icon="images/circle-user-7.png">
+      <Window id="myProfile" class="container">
+        <Label class="labelDesc" color="#ffffff" left="5%" right="5%" wordWrap="true" textAlign="center">User profile, teams and connections will go here</Label>
+      </Window>
+    </Tab>
+    <Tab title="About" icon="images/shop-7.png">
+      <Window id="about" class="container">
+        <Label class="labelDesc" id="labelVersion" top="6%" textAlign="center" color="#dfb770">myLIVING version</Label>
+        <View borderColor="#ffffff" borderWidth="1dp" top="15%" left="5%" bottom="5%" right="5%">
+          <Label class="labelSmall" top="2%" left="2%" bottom="2%" right="2%" backgroundColor="#0f3c50" color="#ffffff" wordWrap="true" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP">Credits:
+Created by: Charles Rethman on a MacBook Pro 13-inch Retina, running OSX 10.10
+Graphics: Rudi White on an iMac, running OSX 10.10
+
+A great number of software packages were used in this piece of work, most of them free and open source:
+  • Appcelerator Studio (Titanium, Titanium Alloy, Aptana, Eclipse IDE)
+  • Apple Xcode (Builder, Simulator and Instruments)
+  • Genymotion Android Emulator
+  • MongoDB
+  • Node.js, which includes the following packages:
+      HTPP, CryptoJS, Express, Passport, MongoDB, Jade, BodyParser
+  • TextMate Editor
+
+In addition, a lot of tutorials helped with getting the fundamentals right:
+  • "How to Write An iOS App that Uses a Node.js/MongoDB Web Service" by
+    Mike Katz - http://www.raywenderlich.com
+  • "Beer Locker: Building a RESTful API With Node" by Scott Smith -
+    http://scottksmith.com
+  • "Eloquent JavaScript" by Marijke Haverbeke - http://eloquentjavascript.net
+  • "JavaScript, The Good Parts" by Douglas Crockford</Label>
+        </View>
+      </Window>
+    </Tab>
+  </TabGroup>
+</Alloy>

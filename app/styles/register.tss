@@ -1,0 +1,58 @@
+"#centreScroll": {
+    center: {x: "50%"},
+    top: "5%",
+    height: "130%",
+    left: 0,
+    width: Titanium.UI.FILL
+}
+
+"Label": {
+    center: {x: "50%"},
+    width: "85%",
+    color: '#646567',
+    height: Titanium.UI.SIZE
+}
+
+'.warning': {
+    color: "red"
+}
+
+"TextField": {
+    center: {x: "50%"},
+    width: '85%',
+    paddingLeft: 30,
+    paddingRight: 7,
+    height: "40dp",
+    backgroundColor: "#a6a7a9",
+    borderColor: "#646567",
+    color: "#dfdedf",
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+}
+
+"#emailText": {
+    autocapitalization: Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    autocorrect: false,
+    keyboardType: Ti.UI.KEYBOARD_TYPE_EMAIL
+}
+
+".pwordText": {
+    passwordMask: true
+}
+
+"ImageView": {
+    opacity: 0.25,
+    center: {y: "50%"},
+    height: 18,
+    left: 6,
+    width: 18,
+    hires: true
+}
+
+"#regButton": {
+    backgroundColor: "#dfb770",
+    color: "#ffffff",
+    shadowColor: "#b4b5b7",
+    shadowRadius: 5,
+    width: 180,
+    height: "45dp"
+}

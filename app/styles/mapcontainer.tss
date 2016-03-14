@@ -1,0 +1,135 @@
+'#mapView' : {
+    top: 0,
+    regionFit: true,
+    animate: true,
+    userLocation: true,
+    userLocationButton: true,
+    compassEnabled: true,
+    enableZoomControls: true
+}
+
+'#viewLabels': {
+    center: {x: "50%"},
+    width: "94%",
+    top: 0,
+    height: "45dp",
+    borderColor: "#000000",
+    borderWidth: 1,
+    backgroundColor: "#ffffff",
+    opacity: 0.7
+}
+
+'#labelCode' : {
+    color: "#000000",
+    left: "2%",
+    width: "15%",
+    top: 0,
+    height: "23dp",
+    textAlign: "left"
+}
+
+'#labelAbbrev' : {
+    color: "#000000",
+    left: "2%",
+    width: "15%",
+    top: 22,
+    height: "23dp",
+    textAlign: "left"
+}
+
+'#labelChooseZone' : {
+    color: "#000000",
+    left: "15%",
+    right: "42dp",
+    top: 0,
+    height: "45dp",
+    textAlign: "left"
+}
+
+'#buttonPolyExtent' : {
+//    borderColor: "#000000",
+//    borderWidth: 1,
+    image: "images/android_locate.png",
+    right: "6dp",
+    width: "30dp",
+    top: "3dp",
+    bottom: "12dp"
+}
+
+'#pickerLzs' : {
+    borderColor: "#000000",
+    borderWidth: 1,
+    center: {x: "50%"},
+    width: "94%",
+//    left: 20,
+//    right: 20,
+    top: "43dp",
+    selectionIndicator: true,
+    useSpinner: true,
+    opacity: 0.7,
+//    font: {fontFamily: "GillSans", fontSize: 14}
+}
+
+'.gid': {
+    textAlign: "right",
+    width: 20,
+    visible: false
+}
+
+'.chooseLZ': {
+    left: "15%",
+    right: 0,
+    textAlign: "left"
+}
+
+'.chooseLZ[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 14}
+}
+
+'.chooseLZ[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 20}
+}
+
+'.chooseLZ[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontWeight: "Bold", fontSize: 14}
+}
+
+'.code': {
+    left: 0,
+    width: "15%",
+    top: 0,
+    height: "50%",
+    textAlign: "left"
+}
+
+'.code[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 8}
+}
+
+'.code[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 13}
+}
+
+'.code[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontWeight: "Bold", fontSize: 8}
+}
+
+'.abbrev': {
+    left: 0,
+    width: "15%",
+    top: "50%",
+    height: "50%",
+    textAlign: "left"
+}
+
+'.abbrev[platform=ios formFactor=handheld]': {
+    font: {fontFamily: "GillSans", fontSize: 8}
+}
+
+'.abbrev[platform=ios formFactor=tablet]': {
+    font: {fontFamily: "GillSans", fontSize: 13}
+}
+
+'.abbrev[platform=android]': {
+    font: {fontFamily: "Gill Light SSi Light", fontWeight: "Bold", fontSize: 8}
+}

@@ -1,0 +1,230 @@
+'#centreBoard': {
+    backgroundColor: "#e3e4e6",
+    viewShadowColor: "#020202",
+//    viewShadowOffset: "2%",
+    viewShadowRadius: "20%",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 5
+}
+
+'#centreHeader': {
+    backgroundColor: "#2f5c70",
+    borderColor: "#646567",
+    borderWidth: 0.25,
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: 76
+}
+
+'.drawerImage': {
+    top: 28,
+    width: "36dip",
+    height: "36dip",
+    selectedColor: "#646567",
+    tintColor: "#aaaaaa"
+}
+
+'#leftDrawerImage': {
+    left: 10,
+    image: "images/spiral_orange.png"
+}
+
+'#centreHeaderArea': {
+    top: 20,
+    left: 60,
+    right: 60,
+    height: 56
+}
+
+'#labelCentreTitle': {
+    top: 4,
+    color: "#dfb770",
+//    font: {fontFamily: "GillSans-Light", fontSize: 28}    
+}
+
+'#labelCentreTitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 28}    
+}
+
+'#labelCentreTitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 18}    
+}
+
+'#labelCentreSubtitle': {
+    top: 34,
+    color: "#dfb770",
+//    font: {fontFamily: "GillSans-Light", fontSize: 18}
+} 
+
+'#labelCentreSubtitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 18}    
+}
+
+'#labelCentreSubtitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: 10}    
+}
+
+'#rightDrawerImage': {
+    right: 10,
+    image: "images/stars.png"
+}
+
+'#centreBody': {
+    top: 76,
+    left: 0,
+    width: "100%",
+    bottom: 0
+}
+
+'#listLivelihood': {
+    top: "1%",
+    left: "1%",
+    height: "60%",
+    width: "98%",
+    backgroundColor: "#ffffff",
+    bubbleParent: true
+}
+
+'#imageGraph': {
+    top: "62%",
+    height: "36%",
+    center: {x: "50%"},
+    width: "75%",
+    image: "images/zalof_sf.png"
+}
+
+// Top, left position of BOTH drawer list views, BOTH drawer list views laid out vertically
+'.navList': {
+    top: 20,
+    left: 0,
+    layout: "vertical",
+    visible: true
+}
+
+'.headerTitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '24dp'},
+}
+
+'.headerTitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '12dp'},
+}
+
+'.title[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '20dp'},
+}
+
+'.title[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '10dp'},
+}
+
+'.subtitle[platform=ios]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '14dp'},
+}
+
+'.subtitle[platform=android]': {
+    font: {fontFamily: "GillSans-Light", fontSize: '8dp'},
+}
+
+//Left Drawer colour (navy blue) and position (leftmost)
+'#leftDrawer': {
+    left: 0,
+    top: 0,
+    height: Titanium.UI.FILL,
+    backgroundColor: "#0f3c50"
+}
+
+'#leftDrawer[formFactor=handheld]': {
+    width: "70%"
+}
+
+'#leftDrawer[formFactor=tablet]': {
+    width: "40%"
+}
+
+'#listLeft': {
+    lifecycleContainer: "livelihood",
+    backgroundColor: "#0f3c50",
+    left: 0,
+    width: "100%",
+    top: 0,
+    height: "100%"
+}
+
+'#headerTitleL': {
+    backgroundColor: "#0f3c50",
+    color: "#dfb770",
+//    font: {fontFamily: "GillSans-Light", fontSize: '24dp'},
+    left: '10dp',
+    top: 20
+}
+
+'.listItemsL': {
+    backgroundColor: "#0f3c50"
+}
+
+'#titleL': {
+    color: "#dfb770",
+//    font: {fontFamily: "GillSans-Light", fontSize: '20dp'},
+    left: '30dp',
+    top: 0
+}
+
+'#subtitleL': {
+    color: "#ffffff",
+//    font: {fontFamily: "GillSans-Light", fontSize: '14dp' },
+    left: '30dp',
+    top: '25dp'
+}
+
+'#rightDrawer': {
+    right: 0,
+    top: 0,
+    height: Titanium.UI.FILL,
+    backgroundColor: "#adaaab"
+}
+
+'#rightDrawer[formFactor=handheld]': {
+    width: "70%",
+}
+
+'#rightDrawer[formFactor=tablet]': {
+    width: "40%",
+}
+
+'#listRight': {
+    lifecycleContainer: "livelihood",
+    backgroundColor: "#adaaab",
+    right: 0,
+    width: "100%",
+    top: 0,
+    height: "100%"
+}
+
+'#headerTitleR': {
+    color: "#0f3c50",
+//    font: {fontFamily: "GillSans-Light", fontSize: '24dp'},
+    left: '10dp',
+    top: 0
+}
+
+'.listItemsR': {
+    backgroundColor: "#adaaab"
+}
+
+'#titleR': {
+    color: "#0f3c50",
+//    font: {fontFamily: "GillSans-Light", fontSize: '20dp'},
+    left: '30dp',
+    top: 0
+}
+
+'#subtitleR': {
+    color: "#ffffff",
+//    font: {fontFamily: "GillSans-Light", fontSize: '14dp' },
+    left: '30dp',
+    top: '25dp'
+}

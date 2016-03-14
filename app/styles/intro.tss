@@ -1,0 +1,28 @@
+"ScrollableView": {
+    bottom: 50
+}
+
+".page": {
+    top: 0,
+    height: Titanium.UI.FILL,
+    bottom: 0,
+    width: Titanium.UI.FILL,
+}
+
+"Label": {
+    left: 10,
+    right: 10,
+    height: Titanium.UI.SIZE,
+    color: "#ffffff",
+    textAlign: "center"
+}
+
+
+'#enterApp': {
+    backgroundColor: "#dfb770",
+    color: "#ffffff",
+    bottom: 0,
+    height: 50,
+    width: Titanium.UI.FILL
+}
+

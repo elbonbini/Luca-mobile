@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>za.wahenga.myliving</id>
+    <name>myLIVING</name>
+    <version>1.0.10.527</version>
+    <publisher>Charles Rethman</publisher>
+    <url>http://www.wahenga.co.za</url>
+    <description>myLIVING is an app to enable the efficient collection of Household Economy Aprroach data into an online database. It replaces a system of paper forms, spreadsheets and cumbersone data entry. myLIVING is designed to work with individual single-sample data entry as well focus group representative data.</description>
+    <copyright>2015 by Charles Rethman</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>70ed0996-4526-4c96-9111-f7d937b1af5e</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>CFBundleShortVersionString</key>
+                <string>1.0</string>
+                <key>CFBundleVersion</key>
+                <string>527</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>
+                    myLIVING needs to use your current location to identify which livelihood zone you are in.
+                </string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:versionCode="527" android:versionName="1.10"/>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">ti.map</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">true</target>
+    </deployment-targets>
+    <sdk-version>5.2.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5593b74a7c84390d577da057</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">xMgX3HpeKymXWj8eqCWXUl9T42eF8a9M</property>
+    <property name="acs-oauth-key-development" type="string">4NXZePCaBMr28TzxtpFHq6xUH9m2SRQV</property>
+    <property name="acs-api-key-development" type="string">paQGHuwweNCG97Y6NtmoDWASGnLinsmL</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">yldhk9m3A6guPnPJDx</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">yRpCDPj9x8ge6ZPWLpEYgwICd4FOE1fG</property>
+    <property name="acs-oauth-key-production" type="string">rxY0hgyVuzuwPQ5DpEbfL5K9MNGbfIJP</property>
+    <property name="acs-api-key-production" type="string">L9yssz5mvg0alxnG6bRHpv37hf2oCJ8h</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">sSDdsW62sYJurTchT4</property>
+    <property name="appc-org-id" type="string">100028893</property>
+    <property name="appc-creator-user-id" type="string">aff08889-bfb0-481f-a5f5-f3b476e31725</property>
+</ti:app>

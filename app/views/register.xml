@@ -1,0 +1,21 @@
+<Alloy>
+	<Window class="container" fullscreen="False">
+    <ScrollView id="centreScroll">
+      <TextField id="emailText" top="5%" hintText="A valid email address" onChange="doChkEmail">
+        <ImageView image="images/envelope.png"></ImageView>
+      </TextField>
+      <Label class="warning" id="emailWarningLabel" top="12%"></Label>
+      <TextField id="employer" top="22%" hintText="Who you work for - 'self' or leave blank if you're on your own">
+        <ImageView image="images/user-card.png"></ImageView>
+      </TextField>
+      <TextField class="pwordText" id="fPasswordText" top="30%" hintText="Choose a password" onChange="doChkPasswords">
+        <ImageView image="images/key-2.png"></ImageView>
+      </TextField>
+      <TextField class="pwordText" id="sPasswordText" top="38%" hintText="Re-enter your password" onChange="doChkPasswords">
+        <ImageView image="images/tick.png"></ImageView>
+      </TextField>
+      <Label class="warning" id="passwordWarningLabel" top="45%"></Label>
+      <Button top="55%" id="regButton" onClick="doClick">  Register yourself!  </Button>
+    </ScrollView>
+	</Window>
+</Alloy>

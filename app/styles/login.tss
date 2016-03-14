@@ -1,0 +1,76 @@
+'#centreScroll': {
+    top: "5%",
+    height: "100%",
+    left: 10,
+    right: 10
+}
+
+'TextField': {
+    center: { x: "50%" },
+    width: "85%",
+    height: "40dp",
+    paddingLeft: 30,
+    paddingRight: 7,
+    backgroundColor: "#a6a7a9",
+    borderColor: "#646567",
+    color: "#dfdedf"
+}
+
+'ImageView': {
+    opacity: 0.25,
+    center: { y: "50%" },
+    height: 18,
+    left: 8,
+    width: 18
+}
+
+'#emailText': {
+    autocapitalization: Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    autocorrect: false,
+    keyboardType: Ti.UI.KEYBOARD_TYPE_EMAIL
+}
+
+'#passwordText': {
+    passwordMask: true
+}
+
+'#loginGroup': {
+    center: {x: "50%"},
+    width: 280,
+    top: "30%",
+    height: "45dp",
+    layout: "horizontal"
+}
+
+'#loginButton': {
+    left: 0,
+    width: "40%",
+    height: "45dp",
+    backgroundColor: "#149b8c",
+    color: "#ffffff",
+    shadowColor: "#b4b5b7",
+    shadowRadius: 5
+}
+
+'#forgotPasswordButton': {
+    right: 0,
+    width: "60%",
+    height: "45dp",
+    backgroundColor: "#dfb770",
+    color: "#ffffff",
+}
+
+'#newUserGroup': {
+    centre: {x: "50%"},
+    width: "90%",
+    top: "44%",
+    height: 90,
+    layout: "vertical"
+}
+
+'#newUserButton': {
+    backgroundColor: "#dfb770",
+    color: '#ffffff',
+    width: 220,
+    height: "45dp"
+}

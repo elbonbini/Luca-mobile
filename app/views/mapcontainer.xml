@@ -1,0 +1,21 @@
+<Alloy>
+  <View id="livezones">
+    <Module id="mapView" module="ti.map" method="createView"></Module>
+    <View id="viewLabels">
+      <Label id="labelCode" class="code" onClick="doLabelClick"> </Label>
+      <Label id="labelAbbrev" class="abbrev" onClick="doLabelClick"> </Label>
+      <Label id="labelChooseZone" class="labelMedium" onClick="doLabelClick">Click here to select a livelihood zone ...</Label>
+      <Button id="buttonPolyExtent" onClick="doPolyExtentClick"/>
+    </View>
+    <Picker id="pickerLzs" onChange="doPickerChange"> <!-- onClick="doPickerClick"-->
+      <PickerColumn id="lzdetails">
+        <PickerRow>
+          <Label class="gid"> </Label>
+          <Label class="code"> </Label>
+          <Label class="abbrev"> </Label>
+          <Label class="chooseLZ">No livelihood zone</Label>
+        </PickerRow>
+      </PickerColumn>
+    </Picker>
+  </View>
+</Alloy>

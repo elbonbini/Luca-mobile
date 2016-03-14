@@ -1,0 +1,6 @@
+task("pre:load",function(event,logger){
+    logger.showTimestamp = true;
+    logger.info('building project at '+ event.dir.project);
+    logger.info('build = ' + JSON.stringify(event.adaptors));
+    
+});

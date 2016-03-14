@@ -1,0 +1,20 @@
+<Alloy>
+	<Window class="container">
+	  <ScrollView id="centreScroll">
+	    <TextField id="emailText" top="7%" hintText="Your email address">
+	      <ImageView image="images/envelope.png"></ImageView>
+	    </TextField>
+	    <TextField id="passwordText" top="17%" hintText="Your password">
+	      <ImageView image="images/locked.png"></ImageView>
+	    </TextField>
+	    <View id="loginGroup">
+	      <Button id="loginButton" onClick="doClick"> Get Going </Button>
+	      <Button id="forgotPasswordButton" onClick="doClick"> Forgot Password? </Button>
+	    </View>
+	    <View id="newUserGroup">
+	      <Label class="textFieldLabel" width="100%">New to myLIVING?</Label>
+	      <Button id="newUserButton" onClick="doClick">Join up</Button>
+	    </View>
+	  </ScrollView>
+	</Window>
+</Alloy>

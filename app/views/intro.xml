@@ -1,0 +1,31 @@
+<Alloy>
+  <Window class="container" fullscreen="True" id="intro">
+    <ScrollableView backgroundImage="splash_blurred.png" showPagingControl="True" 
+      pagingControlAlpha="0.2" pagingControlColor="#646567">
+      <View layout="composite" class="page" id="introView1">
+        <Label class="labelDesc">Welcome to myLIVING!
+                  
+                    
+We hope you enjoy using
+our app on your device.</Label>
+      </View>
+      <View class="page" id="introView2">
+        <Label class="labelDesc">myLIVING uses the
+Household Economy Approach to 
+understand how people make a living.
+
+This can be used for many things:
+from managing disasters to finding
+ways to generate jobs.
+</Label>
+      </View>
+      <View class="page" id="introView3">
+        <Label class="labelDesc">myLIVING captures complex livelihoods
+data and organises it, providing a simple
+way of sharing between ground user and
+analyst.</Label>
+      </View>
+    </ScrollableView>
+    <Button id="enterApp" onClick="doClick">Click to Enter</Button>
+	</Window>
+</Alloy>

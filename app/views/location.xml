@@ -1,0 +1,15 @@
+<Alloy>
+  <Window class="container">
+    <LeftNavButton platform="ios">
+      <Button title="Back" onClick="doCloseWindow" />
+    </LeftNavButton>        
+    <View id="dataEntry">
+      <Label id="labelInfo"  top="10%" class="labelDesc">This will be where you edit details</Label>
+      <Label id="labelPlace" top="25%" class="labelDesc"></Label>
+      <Label id="labelLong" top="40%" class="labelMedium">Longitude: </Label>
+      <Label id="labelLat" top="50%"  class="labelMedium">Latitude: </Label>
+      <Button id="removePin" top="65%" onClick="doRemovePin">Remove Pin</Button>
+      <Button id="close" top="75%" onClick="doCloseWindow">Close</Button> 
+    </View>
+  </Window>
+</Alloy>

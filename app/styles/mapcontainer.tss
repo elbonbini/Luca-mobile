@@ -56,8 +56,8 @@
 }
 
 '#viewPolyExtent' : {
-	right : "2dp",
-	width : "38dp",
+	right : "1dp",
+	width : "40dp",
 	top	: 0,
 	bottom : 0
 }

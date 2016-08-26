@@ -156,7 +156,7 @@ function Controller() {
         views: __alloyId78,
         backgroundImage: "splash_blurred.png",
         showPagingControl: "True",
-        pagingControlAlpha: "0.2",
+        pagingControlAlpha: .2,
         pagingControlColor: "#646567",
         id: "__alloyId77"
     });

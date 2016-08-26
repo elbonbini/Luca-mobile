@@ -342,7 +342,7 @@ function Controller() {
             left: "30dp",
             top: 0,
             bindId: "infoL",
-            visible: "true"
+            visible: true
         }
     };
     __alloyId100.push(__alloyId101);
@@ -358,7 +358,7 @@ function Controller() {
             left: "30dp",
             top: "25dp",
             bindId: "es_infoL",
-            visible: "true"
+            visible: true
         }
     };
     __alloyId100.push(__alloyId102);

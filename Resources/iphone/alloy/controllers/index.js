@@ -891,7 +891,7 @@ function Controller() {
             color: "#ffffff",
             left: "5%",
             right: "5%",
-            wordWrap: "true",
+            wordWrap: true,
             textAlign: "center",
             id: "__alloyId71"
         });
@@ -935,7 +935,7 @@ function Controller() {
             color: "#ffffff",
             left: "5%",
             right: "5%",
-            wordWrap: "true",
+            wordWrap: true,
             textAlign: "center",
             id: "__alloyId73"
         });
@@ -1016,7 +1016,7 @@ function Controller() {
             right: "2%",
             backgroundColor: "#0f3c50",
             color: "#ffffff",
-            wordWrap: "true",
+            wordWrap: true,
             verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP,
             id: "__alloyId76"
         });

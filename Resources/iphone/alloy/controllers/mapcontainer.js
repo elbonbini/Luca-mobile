@@ -87,10 +87,12 @@ function Controller() {
         };
         for (var i = 0; i < mapAttrib.length; i++) {
             var shape = mapAttrib[i];
-            var row = Ti.UI.createPickerRow();
+            var row = Ti.UI.createPickerRow({
+                width: "100%"
+            });
             var labelGid = Ti.UI.createLabel({
                 textAlign: "right",
-                width: 20,
+                width: "100%",
                 visible: false,
                 text: shape.gid,
                 font: fontName
@@ -115,7 +117,7 @@ function Controller() {
             });
             var labelName = Ti.UI.createLabel({
                 left: "15%",
-                right: 0,
+                width: "85%",
                 textAlign: "left",
                 text: shape.lz_name,
                 font: fontName
@@ -259,19 +261,30 @@ function Controller() {
         id: "mapView"
     });
     $.__views.livezones.add($.__views.mapView);
-    $.__views.viewLabels = Ti.UI.createView({
-        center: {
-            x: "50%"
-        },
-        width: "94%",
-        top: 0,
-        height: "45dp",
-        borderColor: "#000000",
-        borderWidth: 1,
-        backgroundColor: "#ffffff",
-        opacity: .7,
-        id: "viewLabels"
-    });
+    $.__views.viewLabels = Ti.UI.createView(function() {
+        var o = {};
+        Alloy.deepExtend(true, o, {
+            center: {
+                x: "50%"
+            },
+            top: 0,
+            height: "50dp",
+            borderColor: "#000000",
+            borderWidth: 1,
+            backgroundColor: "#ffffff",
+            opacity: .7
+        });
+        Alloy.isHandheld && Alloy.deepExtend(true, o, {
+            width: 280
+        });
+        Alloy.isTablet && Alloy.deepExtend(true, o, {
+            width: 720
+        });
+        Alloy.deepExtend(true, o, {
+            id: "viewLabels"
+        });
+        return o;
+    }());
     $.__views.livezones.add($.__views.viewLabels);
     $.__views.labelCode = Ti.UI.createLabel(function() {
         var o = {};
@@ -358,9 +371,9 @@ function Controller() {
         Alloy.deepExtend(true, o, {
             color: "#000000",
             left: "15%",
-            right: "42dp",
+            right: "40dp",
             top: 0,
-            height: "45dp",
+            height: "50dp",
             textAlign: "left",
             text: "Click here to select a livelihood zone ...",
             id: "labelChooseZone"
@@ -369,6 +382,15 @@ function Controller() {
     }());
     $.__views.viewLabels.add($.__views.labelChooseZone);
     doLabelClick ? $.addListener($.__views.labelChooseZone, "click", doLabelClick) : __defers["$.__views.labelChooseZone!click!doLabelClick"] = true;
+    $.__views.viewPolyExtent = Ti.UI.createView({
+        right: "1dp",
+        width: "40dp",
+        top: 0,
+        bottom: 0,
+        id: "viewPolyExtent"
+    });
+    $.__views.viewLabels.add($.__views.viewPolyExtent);
+    doPolyExtentClick ? $.addListener($.__views.viewPolyExtent, "click", doPolyExtentClick) : __defers["$.__views.viewPolyExtent!click!doPolyExtentClick"] = true;
     $.__views.buttonPolyExtent = Ti.UI.createButton(function() {
         var o = {};
         Alloy.isHandheld && Alloy.deepExtend(true, o, {
@@ -385,43 +407,82 @@ function Controller() {
         });
         Alloy.deepExtend(true, o, {
             image: "images/android_locate.png",
-            right: "6dp",
-            width: "30dp",
-            top: "3dp",
-            bottom: "12dp",
+            left: "3dp",
+            right: "3dp",
+            top: "2dp",
+            bottom: "16dp",
             id: "buttonPolyExtent"
         });
         return o;
     }());
-    $.__views.viewLabels.add($.__views.buttonPolyExtent);
-    doPolyExtentClick ? $.addListener($.__views.buttonPolyExtent, "click", doPolyExtentClick) : __defers["$.__views.buttonPolyExtent!click!doPolyExtentClick"] = true;
-    $.__views.pickerLzs = Ti.UI.createPicker({
-        borderColor: "#000000",
-        borderWidth: 1,
-        center: {
-            x: "50%"
-        },
-        width: "94%",
-        top: "43dp",
-        selectionIndicator: true,
-        useSpinner: true,
-        opacity: .7,
-        id: "pickerLzs"
-    });
+    $.__views.viewPolyExtent.add($.__views.buttonPolyExtent);
+    $.__views.labelPolyExtent = Ti.UI.createLabel(function() {
+        var o = {};
+        Alloy.deepExtend(true, o, {
+            left: 0,
+            right: "2dp",
+            bottom: "1dp",
+            textAlign: "center"
+        });
+        Alloy.isHandheld && Alloy.deepExtend(true, o, {
+            font: {
+                fontFamily: "GillSans",
+                fontSize: 8
+            }
+        });
+        Alloy.isTablet && Alloy.deepExtend(true, o, {
+            font: {
+                fontFamily: "GillSans",
+                fontSize: 14
+            }
+        });
+        Alloy.deepExtend(true, o, {
+            text: "Extent",
+            id: "labelPolyExtent"
+        });
+        return o;
+    }());
+    $.__views.viewPolyExtent.add($.__views.labelPolyExtent);
+    $.__views.pickerLzs = Ti.UI.createPicker(function() {
+        var o = {};
+        Alloy.deepExtend(true, o, {
+            borderColor: "#000000",
+            borderWidth: 1,
+            center: {
+                x: "50%"
+            },
+            top: "50dp",
+            type: Titanium.UI.PICKER_TYPE_PLAIN,
+            selectionIndicator: true,
+            useSpinner: true,
+            opacity: .7
+        });
+        Alloy.isHandheld && Alloy.deepExtend(true, o, {
+            width: 280
+        });
+        Alloy.isTablet && Alloy.deepExtend(true, o, {
+            width: 720
+        });
+        Alloy.deepExtend(true, o, {
+            id: "pickerLzs"
+        });
+        return o;
+    }());
     $.__views.livezones.add($.__views.pickerLzs);
     var __alloyId139 = [];
-    $.__views.lzdetails = Ti.UI.createPickerColumn({
-        id: "lzdetails"
+    $.__views.lzDetails = Ti.UI.createPickerColumn({
+        id: "lzDetails"
     });
-    __alloyId139.push($.__views.lzdetails);
+    __alloyId139.push($.__views.lzDetails);
     $.__views.__alloyId140 = Ti.UI.createPickerRow({
         id: "__alloyId140"
     });
-    $.__views.lzdetails.addRow($.__views.__alloyId140);
+    $.__views.lzDetails.addRow($.__views.__alloyId140);
     $.__views.__alloyId141 = Ti.UI.createLabel({
         textAlign: "right",
         width: 20,
         visible: false,
+        text: "x",
         id: "__alloyId141"
     });
     $.__views.__alloyId140.add($.__views.__alloyId141);
@@ -483,6 +544,7 @@ function Controller() {
         var o = {};
         Alloy.deepExtend(true, o, {
             left: "15%",
+            width: "85%",
             right: 0,
             textAlign: "left"
         });
@@ -523,6 +585,12 @@ function Controller() {
         width: 30,
         height: 30
     });
+    Array.prototype.max = function() {
+        return Math.max.apply(Math, this);
+    };
+    Array.prototype.min = function() {
+        return Math.min.apply(Math, this);
+    };
     var sortBy = function(field, reverse, primer) {
         var key = primer ? function(x) {
             return primer(x[field]);
@@ -533,12 +601,6 @@ function Controller() {
         return function(a, b) {
             return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
         };
-    };
-    Array.prototype.max = function() {
-        return Math.max.apply(Math, this);
-    };
-    Array.prototype.min = function() {
-        return Math.min.apply(Math, this);
     };
     rightButton.addEventListener("singletap", function() {
         locationView = Alloy.createController("location", args);
@@ -577,7 +639,7 @@ function Controller() {
     __defers["$.__views.labelCode!click!doLabelClick"] && $.addListener($.__views.labelCode, "click", doLabelClick);
     __defers["$.__views.labelAbbrev!click!doLabelClick"] && $.addListener($.__views.labelAbbrev, "click", doLabelClick);
     __defers["$.__views.labelChooseZone!click!doLabelClick"] && $.addListener($.__views.labelChooseZone, "click", doLabelClick);
-    __defers["$.__views.buttonPolyExtent!click!doPolyExtentClick"] && $.addListener($.__views.buttonPolyExtent, "click", doPolyExtentClick);
+    __defers["$.__views.viewPolyExtent!click!doPolyExtentClick"] && $.addListener($.__views.viewPolyExtent, "click", doPolyExtentClick);
     __defers["$.__views.pickerLzs!change!doPickerChange"] && $.addListener($.__views.pickerLzs, "change", doPickerChange);
     _.extend($, exports);
 }

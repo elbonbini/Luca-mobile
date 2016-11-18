@@ -1,3 +1,13 @@
 # Build folder and log file
 build/
 build.log
+
+# Folders to ignore
+i18n/
+platform/
+Resources/
+
+# Apple folder system files
+.DS_Store
+
+

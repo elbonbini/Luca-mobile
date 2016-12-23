@@ -243,7 +243,7 @@ function Migrate(Model) {
 }
 
 function installDatabase(config) {
-    var dbFile = config.adapter.db_file;
+    var dbFile = _.isFunction(config.adapter.db_file) ? config.adapter.db_file(config) : config.adapter.db_file;
     var table = config.adapter.collection_name;
     var rx = /(^|.*\/)([^\/]+)\.[^\/]+$/;
     var match = dbFile.match(rx);

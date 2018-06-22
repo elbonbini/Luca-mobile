@@ -1,15 +1,13 @@
 /*
- * Animate the centre board so it slides smoothly, revealing the drawer. The speed is set by the '
- * duration' property
+ * Animate the centre board so it slides smoothly, revealing the drawer. The speed is set by the `
+ * duration` property
  */
 function anim (drawer, movePos) {
-//    console.log("left top: " + $.listLeft.top + " left: " + $.listLeft.left + " Z(v): " + $.leftDrawer.zIndex + " Z(l): " + $.listLeft.zIndex);
-//    console.log("right top: " + $.listRight.top + " right: " + $.listRight.right + " Z(v): " + $.rightDrawer.zIndex + " Z(l): " + $.listRight.zIndex);
-    var drawMotion = Ti.UI.create2DMatrix();
+    const drawMotion = Ti.UI.create2DMatrix();
     // move by (+ right, - left) 40% of screen
     drawMotion = drawMotion.translate(movePos, 0);
     // set up movement object
-    var a = Ti.UI.createAnimation( {
+    const a = Ti.UI.createAnimation( {
         // direction and extent
         transform: drawMotion,
         // in ms
@@ -29,9 +27,7 @@ function anim (drawer, movePos) {
  * (flag == true --> opened)
  */
 function finishAnim() {
-    /* 
-     * for iOS, check to see if the keyboard is still visible, remove it by blurring the focus from the search
-     */
+    // for iOS, check to see if the keyboard is still visible, remove it by blurring the focus from the search
     if (Ti.Platform.osname !== "android" && Ti.App.keyboardVisible) $.searchItemR.blur();
 }
 

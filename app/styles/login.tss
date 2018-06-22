@@ -9,8 +9,10 @@
     center: { x: "50%" },
     width: "85%",
     height: "40dp",
-    paddingLeft: 30,
-    paddingRight: 7,
+    padding: {
+      left: 30,
+      right: 7
+    },
     backgroundColor: "#a6a7a9",
     borderColor: "#646567",
     color: "#dfdedf"

@@ -116,7 +116,7 @@
     </Tab>
     <Tab title="About" icon="images/shop-7.png">
       <Window id="about" class="container">
-        <Label class="labelDesc" id="labelVersion" top="6%" textAlign="center" color="#dfb770">myLIVING version</Label>
+        <Label class="labelDesc" id="labelVersion" top="6%" textAlign="center" color="#dfb770">Luca version</Label>
         <View borderColor="#ffffff" borderWidth="1dp" top="15%" left="5%" bottom="5%" right="5%">
           <Label class="labelSmall" top="2%" left="2%" bottom="2%" right="2%" backgroundColor="#0f3c50" color="#ffffff" wordWrap="true" verticalAlign="Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP">Credits:
 Created by: Charles Rethman on a MacBook Pro 13-inch Retina, running OSX 10.10

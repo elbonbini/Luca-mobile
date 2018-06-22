@@ -12,7 +12,7 @@
 	      <Button id="forgotPasswordButton" onClick="doClick"> Forgot Password? </Button>
 	    </View>
 	    <View id="newUserGroup">
-	      <Label class="textFieldLabel" width="100%">New to myLIVING?</Label>
+	      <Label class="textFieldLabel" width="100%">New to Luca?</Label>
 	      <Button id="newUserButton" onClick="doClick">Join up</Button>
 	    </View>
 	  </ScrollView>

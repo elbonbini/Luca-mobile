@@ -1,3 +1,4 @@
+'use strict';
 /*
  * Variable declarations
  */
@@ -185,7 +186,7 @@ $.dataHolder.visible = false;
 /* 
  * Set the label on the About window with the version and build
  */
-$.labelVersion.text = "myLIVING: mobile HEA platform, build " + Ti.App.getVersion() + "\n© Charles Rethman, Wahenga 2015";
+$.labelVersion.text = "Luca: mobile HEA platform, build " + Ti.App.getVersion() + "\n© Charles Rethman, Wahenga 2015";
 
 
 /* Give the index tab window a global parent variable, so that it can be accessed from other windows;

@@ -1,3 +1,4 @@
+'use strict';
 /*
  * Controller for the embedded map view mapcontainer. The controller handles all map functionality,
  * initialising the map to the user's location, loading up livelihood zones from the associated JSON
@@ -10,9 +11,9 @@
 // arguments passed to the view from elsewhere
 var args = arguments[0] || {};
 // shorthand for various objects: the map, the map view and the LZ picker
-var map = Alloy.Globals.Map;
-var mapView = $.mapView;
-var picker = $.pickerLzs;
+const map = Alloy.Globals.Map;
+const mapView = $.mapView;
+const picker = $.pickerLzs;
 //picker.width = "94 %";
 var count = 0;
 // empty object variable to hold the location view
@@ -20,7 +21,7 @@ var locationView = {};
 // empty array variable to put polygons into for analysis andmanipulation across functions
 var polygons = [];
 // Button created and displayed on the annotation pop up bubble
-var rightButton = Titanium.UI.createButton({
+const rightButton = Titanium.UI.createButton({
   backgroundColor: "#ffffff",
   backgroundSelectedColor: "#dfb770",
   image: "images/nav-right.png",
@@ -28,19 +29,25 @@ var rightButton = Titanium.UI.createButton({
   height: 30
 });
 
+const numsOnly = function(acc, e) {
+  return typeof e === 'number' ? acc.concat(Array.of(e)) : acc;
+};
+
+//const n = (acc, e) => typeof e === 'number' ? accum.concat(Array.of(e)) : acc;
+
 // Useful function (method) get the minimum value in an Array of values
-Array.prototype.max = function () {
-  return Math.max.apply(Math, this);
+Array.prototype.max = function() {
+  return this.reduce(numsOnly, []).length > 0 ? Math.max.apply(Math, this.reduce(numsOnly, [])) : undefined;
 };
 
 // Useful function (method) get the maximum value in an Array of values 
 Array.prototype.min = function () {
-  return Math.min.apply(Math, this);
+  return this.reduce(numsOnly, []).length > 0 ? Math.min.apply(Math, this.reduce(numsOnly, [])) : undefined;
 };
 
-// variable and function to sort out an array of objects.
-var sortBy = function(field, reverse, primer) {
-  var key = primer ? function(x) {return primer(x[field]);} : function(x) {return x[field];};
+// Sort out an array of objects.
+function sortBy(field, reverse, primer) {
+  const key = primer ? function(x) { return primer(x[field]); } : function(x) { return x[field]; };
   reverse = !reverse ? 1 : -1;
   return function (a, b) {
       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
@@ -49,25 +56,35 @@ var sortBy = function(field, reverse, primer) {
 
 // Function to drill down to objects embedded in other objects. Can be used to sort on lower level
 // embedded object properties.
-function drillDown (array, field) {
-  var result = [];
-  for (i = 0, len = array.length; i < len; i++) {
-    var objStr = JSON.stringify(array[i]);
-    var init = objStr.indexOf(field);
-    var beginObj = objStr.lastIndexOf("{", init);
-    function test (string, open, close) {
+function drillDown (arr, field) {
+  function test(str, open, close) {
+    return str.indexOf('{', open) < 0 || str.indexOf('{', open) > str.indexOf('}', close) ? str.indexOf('}', close) : false;
+  }
+  const result = [];
+  arr.forEach(function(elem, i) {
+    const oString = JSON.stringify(elem, i);
+    const init = oString.indexOf(field);
+    const beginObj = oString.lastIndexOf('{', init);
+    const endObj = test(oString, init, init);
+    result.push(JSON.parse(oString.slice(beginObj, endObj + 1)));
+  });
+//  for (i = 0, len = array.length; i < len; i++) {
+//    var objStr = JSON.stringify(array[i]);
+//    var init = objStr.indexOf(field);
+//    var beginObj = objStrlastIndexOf("{", init);
+//    function test (string, open, close) {
 //      console.log("open " + string.indexOf("{", open));
 //      console.log("close " + string.indexOf("}", close));
-      if (string.indexOf("{", open) < 0 || string.indexOf("{", open) > string.indexOf("}", close)) {
-        return string.indexOf("}", close);
-      } else {
-        console.log(false);
-      }
-    }
-    endObj = test(objStr, init, init);
+//      if (string.indexOf("{", open) < 0 || string.indexOf("{", open) > string.indexOf("}", close)) {
+//        return string.indexOf("}", close);
+//      } else {
+//        console.log(false);
+//      }
+//    }
+//    endObj = test(objStr, init, init);
 //    console.log(objStr.slice(beginObj, endObj + 1));
-    result.push(JSON.parse(objStr.slice(beginObj, endObj + 1)));
-  }
+//    result.push(JSON.parse(objStr.slice(beginObj, endObj + 1)));
+//  }
 //  console.log(result);
   return result;
 }
@@ -190,53 +207,96 @@ function loadPicker(dataFile, pruneString) {
 //  picker.width = Ti.UI.
   
   // load up the control
-  for (var i = 0; i < mapAttrib.length; i++) {
-    var shape = mapAttrib[i];
-    var row = Ti.UI.createPickerRow({
-      width : "100%"
+  mapAttrib.forEach(function(e) {
+//    var shape = e;
+    const row = Ti.UI.createPickerRow({
+      width : '100%'
     });
-    var labelGid = Ti.UI.createLabel({
-      textAlign: "right",
-      width: "100%",
+    const labelGid = Ti.UI.createLabel({
+      textAlign: 'right',
+      width: '100%',
       visible: false,
-      text: shape.gid,
+      text: e.gid,
       font: fontName
     });
-    var labelCode = Ti.UI.createLabel({
+    const labelCode = Ti.UI.createLabel({
       left: 0,
-      width: "15%",
-      top: 0,
-      height: "50%",
-      textAlign: "left",
-      text: shape.lz_code,
+      width: '15%',
+      tope: 0,
+      height: '50%',
+      textAlign: 'left',
+      text: e.lz_code,
       font: fontCodeAbbrev
     });
-    var labelAbbrev = Ti.UI.createLabel({
+    const labelAbbrev = Ti.UI.createLabel({
       left: 0,
-      width: "15%",
-      top: "50%",
-      height: "50%",
-      textAlign: "left",
-      text: shape.lz_abbrev,
+      width: '15%',
+      top: '50%',
+      height: '50%',
+      textAlign: 'left',
+      text: e.lz_abbrev,
       font: fontCodeAbbrev
     });
-      var labelName = Ti.UI.createLabel({
-         left: "15%",
-         width: "85%",
-         textAlign: "left",
-         text: shape.lz_name,
-         font: fontName
-      });
+    const labelName = Ti.UI.createLabel({
+      left: '15%',
+      width: '85%',
+      textAlign: 'eft',
+      text: e.lz_name,
+      font: fontName
+    });
+    row.add(labelGid);
+    row.add(labelCode);
+    row.add(labelAbbrev);
+    row.add(labelName);
+    picker.columns[0].addRow(row);
+  });
+//  for (var i = 0; i < mapAttrib.length; i++) {
+//    var shape = mapAttrib[i];
+//    var row = Ti.UI.createPickerRow({
+//      width : "100%"
+//    });
+//    var labelGid = Ti.UI.createLabel({
+//      textAlign: "right",
+//      width: "100%",
+//      visible: false,
+//      text: shape.gid,
+//      font: fontName
+//    });
+//    var labelCode = Ti.UI.createLabel({
+//      left: 0,
+//      width: "15%",
+//      top: 0,
+//      height: "50%",
+//      textAlign: "left",
+//      text: shape.lz_code,
+//      font: fontCodeAbbrev
+//    });
+//    var labelAbbrev = Ti.UI.createLabel({
+//      left: 0,
+//      width: "15%",
+//      top: "50%",
+//      height: "50%",
+//      textAlign: "left",
+//      text: shape.lz_abbrev,
+//      font: fontCodeAbbrev
+//    });
+//      var labelName = Ti.UI.createLabel({
+//         left: "15%",
+//         width: "85%",
+//         textAlign: "left",
+//         text: shape.lz_name,
+//         font: fontName
+//      });
 //    console.log("labelCode: ", labelCode.text, ", left: ", labelCode.left, " width: ", labelCode.width);
 //    console.log("labelAbbrev: ", labelAbbrev.text, ", left: ", labelAbbrev.left, " width: ", labelAbbrev.width);
 //    console.log("labelName: ", labelName.text, ", left: ", labelName.left, " width: ", labelName.width, " alignment: ", labelName.textAlign);
-      row.add(labelGid);
-      row.add(labelCode);
-      row.add(labelAbbrev);
-      row.add(labelName);
+//      row.add(labelGid);
+//      row.add(labelCode);
+//      row.add(labelAbbrev);
+//      row.add(labelName);
 //    row.add(viewLzAttribs);
-      picker.columns[0].addRow(row);
-   }
+//      picker.columns[0].addRow(row);
+//   }
 
 }
 
@@ -265,7 +325,7 @@ function revGeocodeYahoo(lat, lng, id) {
 //    console.log(e);
 //    console.log(JSON.stringify(e.source));
 //    console.log("Result (0=failed, 1=success): " + e.data == null);
-    if (e.data !== null) {
+    if (e.data !== null && e.data !== undefined) {
       var resultSet = e.data.json.ResultSet;
       if (resultSet.error || resultSet === null) {
         // connection error

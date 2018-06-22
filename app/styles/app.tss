@@ -34,8 +34,8 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 '.container[platform=ios]': {
-    navBarHidden: true,
-    statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
+    navBarHidden: true
+//    statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT
 }
 
 '.labelSmall[platform=ios formFactor=handheld]': {

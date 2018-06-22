@@ -20,8 +20,10 @@
 "TextField": {
     center: {x: "50%"},
     width: '85%',
-    paddingLeft: 30,
-    paddingRight: 7,
+    padding: {
+      left: 30,
+      right: 7
+    },
     height: "40dp",
     backgroundColor: "#a6a7a9",
     borderColor: "#646567",
